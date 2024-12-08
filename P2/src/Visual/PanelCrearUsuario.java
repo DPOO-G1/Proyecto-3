@@ -27,7 +27,7 @@ public class PanelCrearUsuario extends JPanel{
     String[] tiposUsuarios = {"Profesor", "Estudiante", "Calificador"};
     JComboBox<String> tipoUsuarioComboBox = new JComboBox<>(tiposUsuarios);
 	JButton guardar = new JButton("Guardar");
-	JButton atras = new JButton("Guardar");
+	JButton atras = new JButton("Atras");
 	
 	public PanelCrearUsuario(CardLayout layout, JPanel panelPrincipal,Map<String, Usuario> usuarios) {
 		setLayout(new GridLayout(6, 1, 10, 10));
