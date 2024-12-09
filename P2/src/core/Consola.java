@@ -27,8 +27,9 @@ public class Consola {
 		//PersistenciaActividades.cargarActividades(mapaLearningPaths);
 		//(PersistenciaInscripciones.cargarInscripciones(usuarios, mapaLearningPaths);
 		SwingUtilities.invokeLater(() -> {
-            VentanaPrincipal ventanaPrincipal = new VentanaPrincipal(usuarios);
+            VentanaPrincipal ventanaPrincipal = new VentanaPrincipal(usuarios, mapaLearningPaths);
             ventanaPrincipal.setVisible(true);
+            
         });
 	}
 	
