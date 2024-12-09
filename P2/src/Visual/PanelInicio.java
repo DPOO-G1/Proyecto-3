@@ -45,12 +45,12 @@ public class PanelInicio extends JPanel {
             		
             		Usuario usuario=usuarios.get(correoLogin);
             		if (usuario instanceof Estudiante) {
-            			VentanaEstudiante ventanaEstudiante = new VentanaEstudiante(usuario,usuarios,mapaLearningPaths);
+            			VentanaEstudiante ventanaEstudiante = new VentanaEstudiante(usuario,usuarios,mapaLearningPaths, usuarios);
                         ventanaEstudiante.setVisible(true);
                         
             		}
             		if (usuario instanceof Profesor) {
-            			VentanaProfesor ventanaProfesor= new VentanaProfesor(usuario,mapaLearningPaths);
+            			VentanaProfesor ventanaProfesor= new VentanaProfesor(usuario,mapaLearningPaths, usuarios);
                         ventanaProfesor.setVisible(true);
             		}
             		

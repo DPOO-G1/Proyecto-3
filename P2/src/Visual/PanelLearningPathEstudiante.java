@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -13,6 +14,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import actividades.Actividad;
+import core.Controller;
 import learningPath.LearningPath;
 import usuarios.Estudiante;
 import usuarios.Usuario;
@@ -25,21 +27,19 @@ public class PanelLearningPathEstudiante extends JPanel{
 	JLabel descripcion;
 	JLabel objetivos;
 	JLabel nivelDificultad;
-	JLabel profesor;
 	JLabel duracion;
 	JLabel rating;
 	JLabel fechaCreacion; 
 	JLabel fechaUltModificacion;
 	
-	public PanelLearningPathEstudiante(LearningPath learningPath, JPanel mainPanel,Estudiante estudiante) {
-		retirar =new JButton("Retirar Learninpath");
-		anadir =new JButton("Retirar Learninpath");
+	public PanelLearningPathEstudiante(LearningPath learningPath, JPanel mainPanel,Estudiante estudiante,Map<String, Usuario> Usuarios) {
+		retirar =new JButton("Retirar Learningpath");
+		anadir =new JButton("Añadir LearningPath");
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		titulo = new JLabel("Título: " + learningPath.getTitulo());
         descripcion = new JLabel("Descripción: " + learningPath.getDescripcion());
         objetivos = new JLabel("Objetivos: " + learningPath.getObjetivos());
         nivelDificultad = new JLabel("Nivel de Dificultad: " + learningPath.getNivelDificultad());
-        profesor = new JLabel("Profesor: " + learningPath.getProfesor().getNombre());
         duracion = new JLabel("Duración: " + learningPath.getDuracion() + " horas");
         rating = new JLabel("Rating: " + learningPath.getRating());
         fechaCreacion = new JLabel("Fecha de Creación: " + learningPath.getFechaCreacion());
@@ -50,7 +50,6 @@ public class PanelLearningPathEstudiante extends JPanel{
         add(descripcion);
         add(objetivos);
         add(nivelDificultad);
-        add(profesor);
         add(duracion);
         add(rating);
         add(fechaCreacion);
@@ -61,6 +60,8 @@ public class PanelLearningPathEstudiante extends JPanel{
 		            public void actionPerformed(ActionEvent e) {
 		            	 List<LearningPath> learningPaths = estudiante.getLearningPaths();
 		                 learningPaths.removeIf(lp -> lp.getTitulo().equals(learningPath.getTitulo()));
+		                 Controller.actualizarUsuario(estudiante, null);
+		                 
 
 		            }
 		        });

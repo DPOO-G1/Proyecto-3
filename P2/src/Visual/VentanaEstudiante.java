@@ -19,7 +19,7 @@ public class VentanaEstudiante extends JFrame {
 	 
 	 private JPanel mainPanel;
 	 
-	 public VentanaEstudiante(Usuario usuario,Map<String, Usuario> usuarios,Map<String, LearningPath> mapaLearningPaths){
+	 public VentanaEstudiante(Usuario usuario,Map<String, Usuario> usuarios,Map<String, LearningPath> mapaLearningPaths,Map<String, Usuario> usuarios1){
 		 
 		 layout= new BorderLayout();
 		 setLayout(layout);
@@ -30,16 +30,16 @@ public class VentanaEstudiante extends JFrame {
 	     panelPrincipal = new PanelPrincipalEstudiante(usuario);
 	     mainPanel.add(panelPrincipal, "panelPrincipal");
 	     
-	     panelMisLearningpaths = new PanelMisLearningPathsEstudiante(usuario, mainPanel);
+	     panelMisLearningpaths = new PanelMisLearningPathsEstudiante(usuario, mainPanel, usuarios1);
 	     mainPanel.add(panelMisLearningpaths, "panelMisLearningPaths");
 	     
-	     panelLearningPathsEstudiante = new PanelLearningPathsDisponibles(usuario, mainPanel, mapaLearningPaths);
+	     panelLearningPathsEstudiante = new PanelLearningPathsDisponibles(usuario, mainPanel, mapaLearningPaths,usuarios1);
 	     mainPanel.add(panelLearningPathsEstudiante, "panelLearningPathsEstudiante");
 	     
 	     
 	     add(mainPanel, BorderLayout.CENTER);
 		 
-		 panelIzquiero = new PanelIzquierdoEstudiante(usuario, usuarios, mapaLearningPaths, mainPanel);
+		 panelIzquiero = new PanelIzquierdoEstudiante(usuario, usuarios1, mapaLearningPaths, mainPanel);
 		 add(panelIzquiero, BorderLayout.EAST);
 		 
 	 }

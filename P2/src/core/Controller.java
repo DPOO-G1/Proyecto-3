@@ -96,6 +96,17 @@ public class Controller {
      }
 	}
 
+	
+	public static void actualizarUsuario(Usuario usuario, Map<String, Usuario> mapaUsuarios) {
+	    
+	    String key = usuario.getCorreo(); 
+
+	    
+	    mapaUsuarios.put(key, usuario);
+	    PersistenciaUsuarios.guardarUsuarios(mapaUsuarios);
+
+	    
+	}
 	public static Boolean verificarIdentidad(Map<String, Usuario> usuarios,String correo, String password) {
 		
 		if (usuarios.containsKey(correo)) {

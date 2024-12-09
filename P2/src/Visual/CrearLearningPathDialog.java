@@ -78,13 +78,13 @@ public class CrearLearningPathDialog extends JDialog {
             return;
         }
 
-        // Aquí podrías guardar los datos en la lista del profesor o en un archivo
+        
         JOptionPane.showMessageDialog(this, "Learning Path creado exitosamente:\n" +
                 "Título: " + titulo + "\n" +
                 "Descripción: " + descripcion + "\n" +
                 "Objetivos: " + objetivos + "\n" +
                 "Dificultad: " + dificultad);
-        Controller.crearLearningPath(this.mapaLearningPaths, profesor,titulo,descripcion, objetivos,dificultad);
+        Controller.crearLearningPath(this.mapaLearningPaths,(Profesor) profesor,titulo,descripcion, objetivos,dificultad);
         
         dispose(); // Cierra el diálogo
     }

@@ -17,7 +17,7 @@ public class VentanaProfesor extends JFrame {
     private Map<String, LearningPath> mapaLearningPaths;
     private Usuario profesor;
 
-    public VentanaProfesor(Usuario profesor,Map<String, LearningPath> mapaLearningPaths) {
+    public VentanaProfesor(Usuario profesor,Map<String, LearningPath> mapaLearningPaths, Map<String, Usuario> usuarios) {
         setTitle("Ventana Profesor");
         setSize(400, 250);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

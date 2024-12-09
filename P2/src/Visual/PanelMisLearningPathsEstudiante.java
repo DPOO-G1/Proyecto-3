@@ -5,12 +5,14 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
+import java.util.Map;
+
 import learningPath.LearningPath;
 import usuarios.Estudiante;
 import usuarios.Usuario;
 
 public class PanelMisLearningPathsEstudiante extends JPanel {
-    public PanelMisLearningPathsEstudiante(Usuario usuario, JPanel mainPanel) {
+    public PanelMisLearningPathsEstudiante(Usuario usuario, JPanel mainPanel,Map<String, Usuario> usuarios) {
         
         Estudiante estudiante = (Estudiante) usuario;
 
@@ -33,7 +35,7 @@ public class PanelMisLearningPathsEstudiante extends JPanel {
             botonLearningPath.setAlignmentX(Component.CENTER_ALIGNMENT);
 
             
-            PanelLearningPathEstudiante panelLearningPath = new PanelLearningPathEstudiante(learningPath, mainPanel, estudiante);
+            PanelLearningPathEstudiante panelLearningPath = new PanelLearningPathEstudiante(learningPath, mainPanel, estudiante, null);
             mainPanel.add(panelLearningPath, learningPath.getTitulo());
 
            
