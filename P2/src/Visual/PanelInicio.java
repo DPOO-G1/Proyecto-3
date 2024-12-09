@@ -50,7 +50,8 @@ public class PanelInicio extends JPanel {
                         
             		}
             		if (usuario instanceof Profesor) {
-            			
+            			VentanaProfesor ventanaProfesor= new VentanaProfesor(usuario,mapaLearningPaths);
+                        ventanaProfesor.setVisible(true);
             		}
             		
             	}

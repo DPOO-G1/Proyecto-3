@@ -33,7 +33,7 @@ public class VentanaEstudiante extends JFrame {
 	     panelMisLearningpaths = new PanelMisLearningPathsEstudiante(usuario, mainPanel);
 	     mainPanel.add(panelMisLearningpaths, "panelMisLearningPaths");
 	     
-	     panelLearningPathsEstudiante = new PanelLearningPathsDisponibles(usuario, mainPanel);
+	     panelLearningPathsEstudiante = new PanelLearningPathsDisponibles(usuario, mainPanel, mapaLearningPaths);
 	     mainPanel.add(panelLearningPathsEstudiante, "panelLearningPathsEstudiante");
 	     
 	     
