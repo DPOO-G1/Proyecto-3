@@ -19,6 +19,7 @@ import usuarios.Usuario;
 public class PanelLearningPathEstudiante extends JPanel{
 	
 	JButton retirar;
+	JButton anadir;
 	JLabel titulo;
 	JLabel descripcion;
 	JLabel objetivos;
@@ -31,6 +32,7 @@ public class PanelLearningPathEstudiante extends JPanel{
 	
 	public PanelLearningPathEstudiante(LearningPath learningPath, JPanel mainPanel,Estudiante estudiante) {
 		retirar =new JButton("Retirar Learninpath");
+		anadir =new JButton("Retirar Learninpath");
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		titulo = new JLabel("Título: " + learningPath.getTitulo());
         descripcion = new JLabel("Descripción: " + learningPath.getDescripcion());
@@ -61,7 +63,15 @@ public class PanelLearningPathEstudiante extends JPanel{
 
 		            }
 		        });
-        
+        anadir.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            	 List<LearningPath> learningPaths = estudiante.getLearningPaths();
+                 learningPaths.addIf(lp -> lp.getTitulo().equals(learningPath.getTitulo()));
+
+            }
+        });
+
         
         List<Actividad> actividades = learningPath.getActividades();
         

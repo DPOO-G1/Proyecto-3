@@ -15,6 +15,7 @@ public class VentanaEstudiante extends JFrame {
 	 private PanelIzquierdoEstudiante panelIzquiero;
 	 private PanelPrincipalEstudiante panelPrincipal;
 	 private PanelMisLearningPathsEstudiante panelMisLearningpaths;
+	 private PanelLearningPathsDisponibles panelLearningPathsEstudiante;
 	 
 	 private JPanel mainPanel;
 	 
