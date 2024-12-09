@@ -34,6 +34,7 @@ public class PanelCrearUsuario extends JPanel{
 		add(nombre);
 		add(correo);
 		add(contraseña);
+		add(tipoUsuarioComboBox);
 		
 		add(guardar);
 		add(atras);
