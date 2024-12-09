@@ -225,22 +225,13 @@ public class Controller {
 
 	//Menu Profesor
 
-	public static void crearLearningPath(Map<String, LearningPath> mapaLearningPaths, Usuario usuario,Scanner scanner) {
-		System.out.print("Ingrese el título: ");
-    	String titulo = scanner.nextLine();
-    	System.out.print("Ingrese la descripción: ");
-    	String descripcion = scanner.nextLine();
-    	System.out.print("Ingrese los objetivos: ");
-    	String objetivos = scanner.nextLine();
-    	System.out.print("Ingrese el nivel de dificultad: ");
-    	String nivelDificultad = scanner.nextLine();
-    	
-    	LearningPath learningpath = ((Profesor) usuario).crearLearningPath(titulo,descripcion,objetivos,nivelDificultad);
+	public static void crearLearningPath(Map<String, LearningPath> mapaLearningPaths, Usuario profesor, String titulo, String descripcion, String objetivos, String nivelDificultad) {
+		
+    	LearningPath learningpath = ((Profesor) profesor).crearLearningPath(titulo,descripcion,objetivos,nivelDificultad);
     	             	
-    	((Profesor) usuario).addLearningPath(learningpath);
+    	((Profesor) profesor).addLearningPath(learningpath);
     	mapaLearningPaths.put(titulo, learningpath);
     	persistencia.PersistenciaLearningPaths.guardarLearningPaths(mapaLearningPaths);
-    	System.out.print("Learning Path guardado exitosamente");
 	}
 
 	public static LearningPath mostrarLearningPathsSeleccionar(Usuario usuario,Scanner scanner) {

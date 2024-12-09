@@ -60,14 +60,13 @@ public class PanelIzquierdoEstudiante extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 CardLayout cardLayout = (CardLayout) mainPanel.getLayout();
-                cardLayout.show(mainPanel, "LearningPathsDisponibles");
+                cardLayout.show(mainPanel, "panelLearningPathsEstudiante");
             }
         });
 
         logout.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
- 
                 System.exit(0); 
             }
         });

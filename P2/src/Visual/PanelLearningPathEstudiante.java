@@ -9,6 +9,7 @@ import java.util.List;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import actividades.Actividad;
@@ -66,9 +67,16 @@ public class PanelLearningPathEstudiante extends JPanel{
         anadir.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            	 List<LearningPath> learningPaths = estudiante.getLearningPaths();
-                 learningPaths.addIf(lp -> lp.getTitulo().equals(learningPath.getTitulo()));
+            	List<LearningPath> learningPaths = estudiante.getLearningPaths(); 
+            	boolean exists = learningPaths.stream()
+                         .anyMatch(lp -> lp.getTitulo().equals(learningPath.getTitulo()));
 
+                 if (!exists) {
+                     learningPaths.add(learningPath);
+                     
+                 } else {
+                     JOptionPane.showMessageDialog(null, "El Learning Path ya existe.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                 }
             }
         });
 
